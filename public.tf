@@ -31,7 +31,7 @@ resource "aws_subnet" "public" {
 }
 
 resource "aws_network_acl" "public" {
-  count      = var.enabled && var.type == "public" && var.public_network_acl_id == "" ? 1 : 0
+  count      = var.enabled && var.type == "public" && var.create_nacl == "true" ? 1 : 0
   vpc_id     = var.vpc_id
   subnet_ids = aws_subnet.public.*.id
   dynamic "egress" {

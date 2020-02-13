@@ -155,3 +155,6 @@ variable "nat_gateway_enabled" {
   default     = "true"
 }
 
+variable "create_nacl" {
+  default = "false"
+}
